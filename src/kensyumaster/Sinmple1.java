@@ -26,7 +26,7 @@ class B extends A {
 public class Sinmple1 {
 	public static void main(String[] args) {
 		B b = new B();
-		System.out.println("bのxの値は" + b.x + "、yの値は" + b.y + "です");
+		System.out.println("bのxの値は" + b.x + "、yの値は" + b.y + "です。");
 	}
 
 }
