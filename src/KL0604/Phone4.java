@@ -23,4 +23,5 @@ public class Phone4 {
 	public void setNo(String no) {
 		this.no = no;
 	}
+
 }
