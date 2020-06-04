@@ -1,4 +1,4 @@
-package java;
+package KL0604;
 
 class A {
 	int x;
