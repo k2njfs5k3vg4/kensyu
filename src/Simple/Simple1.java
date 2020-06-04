@@ -1,4 +1,4 @@
-package murano_kima.src.Simple;
+package Simple;
 
 class A {
 	int x;
