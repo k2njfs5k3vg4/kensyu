@@ -1,26 +1,29 @@
 package murano_kima.src.Simple;
 
-class A {
+class A2 {
 	int x;
 
-	A() {
-		x = 10;
+	A2(int x) {
+		this.x = x;
 		System.out.println("クラスAのコンストラクタを実行しました");
 	}
 }
 
-class B extends A {
+class B2 extends A2 {
 	int y;
 
-	B() {
-		y = 20;
+	B2() {
+		super(10);
+		this.y = 20;
 		System.out.println("クラスBのコンストラクタを実行しました");
 	}
 }
 
-class Simple1 {
+class Simple2 {
+
 	public static void main(String[] args) {
-		B b = new B();
+		B2 b = new B2();
 		System.out.println("bのxの値は" + b.x + "、yの値は" + b.y + "です");
 	}
+
 }
