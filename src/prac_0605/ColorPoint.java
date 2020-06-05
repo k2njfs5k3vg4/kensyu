@@ -19,9 +19,9 @@ public class ColorPoint extends Point {
 		return color;
 	}
 
-	public Object getColorPoint() {
+	public Object getPoint() {
 		// TODO 自動生成されたメソッド・スタブ
-		return getPoint() + "," + color;
+		return super.getPoint() + "," + color;
 	}
 
 }

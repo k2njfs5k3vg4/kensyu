@@ -21,7 +21,20 @@ class ColorPointTest extends ColorPoint {
 		//fail("まだ実装されていません");
 		ColorPoint cp = new ColorPoint(15, 20, "red");
 
-		Assertions.assertEquals("15,20,red", cp.getColorPoint());
+		Assertions.assertEquals("15,20,red", cp.getPoint());
+	}
+
+	@Test
+	@DisplayName("list")
+	void test3() {
+		//fail("まだ実装されていません");
+		Point[] p = { new Point(3, 9), new ColorPoint(12, -3, "Red"), new Point(56, 2),
+				new ColorPoint(7, -28, "Blue") };
+
+		Assertions.assertEquals("3,9", p[0].getPoint());
+		Assertions.assertEquals("12,-3,Red", p[1].getPoint());
+		Assertions.assertEquals("56,2", p[2].getPoint());
+		Assertions.assertEquals("7,-28,Blue", p[3].getPoint());
 	}
 
 }
