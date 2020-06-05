@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 class StringsTest extends Strings {
 	String s1 = "This is a Murano";
 	String s2 = "abcabcabcabcdefab";
+	String s3 = "abc";
 
 	@Test
 	void test() {
@@ -30,6 +31,11 @@ class StringsTest extends Strings {
 	@Test
 	void test4() {
 		Assertions.assertEquals(s2.lastIndexOf("abc"), 9);
+	}
+
+	@Test
+	void test5() {
+		Assertions.assertEquals(s3.toUpperCase(), "ABC");
 	}
 
 }
