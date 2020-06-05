@@ -23,17 +23,17 @@ public class Point {
 		this.y = y;
 	}
 
-	public Integer getX() {
+	public int getX() {
 		// TODO 自動生成されたメソッド・スタブ
 		return this.x;
 	}
 
-	public Integer getY() {
+	public int getY() {
 		// TODO 自動生成されたメソッド・スタブ
 		return this.y;
 	}
 
-	public Object showPoint() {
+	public String showPoint() {
 		// TODO 自動生成されたメソッド・スタブ
 		return this.x + "," + this.y;
 	}
