@@ -2,7 +2,7 @@ package kensyu;
 
 public class Product {
 
-	int price;
+	private int price;
 
 	public void setPrice(int price) {
 		this.price = price;
