@@ -2,32 +2,35 @@ package kensyu;
 
 public class DoubleCalc {
 
-	private Double[] doubles = new Double[2];
+	private double[] doubles;
 
 	public DoubleCalc() {
 
 	}
 
 	public DoubleCalc(String[] strings) throws NumberFormatException, inValidStrings {
-		if (strings.length != 2) {
-			throw new inValidStrings("引数を2つ用意してください");
+
+		if (strings.length < 2) {
+			throw new inValidStrings("引数を2つ以上用意してください");
 		}
 
-		for (int i = 0; i < strings.length; i++) {
-			this.doubles[i] = Double.parseDouble(strings[i]);
+		else {
+			doubles = new double[strings.length];
+			for (int i = 0; i < strings.length; i++) {
+				this.doubles[i] = Double.parseDouble(strings[i]);
+			}
 		}
-
 	}
 
 	public double Addition() {
-		int sum = 0;
+		double sum = 0;
 		for (double num : this.doubles) {
 			sum += num;
 		}
-		return sum;
+		return Math.floor(sum * 10) / 10;
 	}
 
-	public Double[] getDoubles() {
+	public double[] getDoubles() {
 		return doubles;
 	}
 }
