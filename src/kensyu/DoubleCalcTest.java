@@ -36,7 +36,7 @@ class DoubleCalcTest {
 	}
 
 	@Test
-	@DisplayName("引数がdoubleではないのとき")
+	@DisplayName("引数が整数のとき")
 	void test3() {
 		try {
 			double arr [] = {2, 3};
@@ -48,8 +48,33 @@ class DoubleCalcTest {
 	}
 
 	@Test
-	@DisplayName("引数が2つ以上のとき")
+	@DisplayName("引数がStringのとき")
 	void test4() {
+		try {
+			String arr [] = {"2.3", "3.5"};
+			DoubleCalc d = new DoubleCalc(arr);
+		} catch (IllegalArg_Exception e) {
+			fail();
+		}
+		return;
+	}
+
+	@Test
+	@DisplayName("引数がStringの文字のとき")
+	void test5() {
+		try {
+			String arr [] = {"あ", "う"};
+			DoubleCalc d = new DoubleCalc(arr);
+		} catch (IllegalArg_Exception | NumberFormatException e) {
+			return;
+		}
+		fail();
+	}
+
+
+	@Test
+	@DisplayName("引数が2つ以上のとき")
+	void test6() {
 		try {
 			double arr [] = {2.0, 3.0, 5.0};
 			DoubleCalc d = new DoubleCalc(arr);
