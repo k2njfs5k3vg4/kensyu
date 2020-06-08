@@ -7,39 +7,27 @@ public class Day10 {
 	private int date;
 
 	public String toString() {
-		return year+"年"+month+"月"+date+"日";
+		return year + "年" + month + "月" + date + "日";
 	}
 
-	public int getYear() {
-		return year;
-	}
-
-	public void setYear(int year) {
+	public Day10(int year, int month, int date) throws InvalidDayException {
+		if (year < 1 || year > 3000) {
+			throw new InvalidDayException("年の範囲を超えました");
+		}
+		if (month < 1 || month > 12) {
+			throw new InvalidDayException("月の範囲を超えました");
+		}
+		if (date < 1 || date > 31) {
+			throw new InvalidDayException("日の範囲を超えました");
+		}
 		this.year = year;
-	}
-
-	public int getMonth() {
-		return month;
-	}
-
-	public void setMonth(int month) {
 		this.month = month;
-	}
-
-	public int getDate() {
-		return date;
-	}
-
-	public void setDate(int date) {
 		this.date = date;
 	}
 
-	public Day10(int i, int j, int k) throws InvalidDayException{
-		this.year=i;
-		this.month=j;
-		this.date=k;
+	public Day10(int year, int month) throws InvalidDayException {
+		// TODO 自動生成されたコンストラクター・スタブ
+		this(year, month, 1);
 	}
-
-
 
 }
