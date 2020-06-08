@@ -2,7 +2,7 @@ package kensyu;
 
 public class DoubleCalc {
 
-	Double[] doubles = new Double[2];
+	private Double[] doubles = new Double[2];
 
 	public DoubleCalc() {
 
@@ -19,4 +19,15 @@ public class DoubleCalc {
 
 	}
 
+	public double Addition() {
+		int sum = 0;
+		for (double num : this.doubles) {
+			sum += num;
+		}
+		return sum;
+	}
+
+	public Double[] getDoubles() {
+		return doubles;
+	}
 }
