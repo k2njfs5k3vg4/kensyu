@@ -27,5 +27,17 @@ class UseDay10{
 		} catch(InvalidDayException e) {
 			e.printStackTrace();
 		}
+
+		try {
+			Day10 d3 = new Day10(1);
+			System.out.println("インスタンスd1の日付は" + d3);
+
+			Day10 d4 = new Day10(0);
+			System.out.println("インスタンスd2の日付は" + d4);
+
+		} catch(InvalidDayException e) {
+			e.printStackTrace();
+		}
+
 	}
 }
