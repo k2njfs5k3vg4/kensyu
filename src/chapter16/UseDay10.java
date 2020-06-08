@@ -17,7 +17,7 @@ class Day10 {
 		if (month < 1 || month > 12) {
 			throw new InvalidDayException("月の範囲を超えました。");
 		}
-		if (date < 1 || date > 3000) {
+		if (date < 1 || date > 31) {
 			throw new InvalidDayException("日の範囲を超えました。");
 		}
 		this.year = year;
