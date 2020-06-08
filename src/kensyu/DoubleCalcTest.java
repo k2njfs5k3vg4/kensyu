@@ -84,4 +84,16 @@ class DoubleCalcTest {
 		}
 	}
 
+	@Test
+	@DisplayName("引数がnullのとき")
+	void test7() {
+		try {
+			double arr [] = null;
+			DoubleCalc d = new DoubleCalc(arr);
+			Assertions.assertEquals(10.0, d.add());
+		} catch (IllegalArg_Exception e) {
+			fail();
+		}
+	}
+
 }
