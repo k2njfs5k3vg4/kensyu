@@ -1,34 +1,40 @@
 package kensyu;
 
-import java.io.IOException;
-
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class DoubleCaleTest extends DoubleCale {
 
 	@Test
-	void test() throws CalcExpection {
-		String[] s = new String[2];
-		s[0] = "111";
-		s[1] = "222";
-		DoubleCale d = new DoubleCale();
-		//			double a = Double.valueOf();
-		calc(s[0], s[1]);
-	}
-
-	@Test
-	void test2() {
+	void test() {
 		try {
-			String[] s = new String[2];
-			s[0] = "111";
+			String[] s = { "1", "2" };
 			//		s[1] = "";
 			DoubleCale d = new DoubleCale();
 			//			double a = Double.valueOf();
-			calc(s[0], s[1]);
-		} catch (IOException i) {
-			return;
+			Assertions.assertEquals(3, calc(s));
+		} catch (NumberFormatException e) {
+			Assertions.fail();
 		}
-		fail();
+
+	}
+
+	@Test
+	void test2() throws CalcExpection {
+		String[] s = { "1" };
+		//		s[1] = "";
+		DoubleCale d = new DoubleCale();
+		//			double a = Double.valueOf();
+	}
+
+	@Test
+	void test3() {
+		String[] s = { "1.1", "2.0" };
+		//		s[1] = "";
+		DoubleCale d = new DoubleCale();
+		//			double a = Double.valueOf();
+		Assertions.assertEquals(3.1, calc(s));
+
 	}
 
 }
