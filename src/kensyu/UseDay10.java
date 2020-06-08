@@ -1,6 +1,6 @@
 package kensyu;
 
-class Day10 {
+class UseDay10 {
 	private int year;
 	private int month;
 	private int date;
@@ -10,7 +10,7 @@ class Day10 {
 		return year + "年" + month + "月" + date + "日";
 	}
 
-	public Day10(int year, int month, int date) throws InvalidDayException {
+	public UseDay10(int year, int month, int date) throws InvalidDayException {
 		if (year < 1 || year > 3000) {
 			throw new InvalidDayException("年の範囲を超えました");
 		}
@@ -25,26 +25,30 @@ class Day10 {
 		this.date = date;
 	}
 
-	public Day10(int year, int month) throws InvalidDayException {
+	public UseDay10(int year, int month) throws InvalidDayException {
 		this(year, month, 1);
 	}
-}
 
-public class UseDay10 {
+	public UseDay10() {
 
-	public static void main(String[] args) {
-		try {
-			Day10 d1 = new Day10(2007, 12, 30);
-			Day10 d2 = new Day10(-1995, 3, 5);
-			Day10 d3 = new Day10(2000, 1000);
-
-			System.out.println(d1);
-			System.out.println(d2);
-			System.out.println(d3);
-
-		} catch (InvalidDayException e) {
-			e.printStackTrace();
-		}
 	}
-
 }
+
+//public class UseDay10 {
+//
+//	public static void main(String[] args) {
+//		try {
+//			Day10 d1 = new Day10(2007, 12, 30);
+//			Day10 d2 = new Day10(-1995, 3, 5);
+//			Day10 d3 = new Day10(2000, 1000);
+//
+//			System.out.println(d1);
+//			System.out.println(d2);
+//			System.out.println(d3);
+//
+//		} catch (InvalidDayException e) {
+//			e.printStackTrace();
+//		}
+//	}
+//
+//}
