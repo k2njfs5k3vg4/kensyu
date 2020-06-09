@@ -1,6 +1,8 @@
 package kensyu;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class IntStream {
@@ -8,6 +10,10 @@ public class IntStream {
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ
 		Scanner scan = new Scanner(System.in);
+		List<String> List = new ArrayList<String>();
+		List.add("1");
+		List.add("5");
+		List.stream().mapToInt(s -> Integer.parseInt(s)).max();
 
 		int[] points = new int[5];
 
