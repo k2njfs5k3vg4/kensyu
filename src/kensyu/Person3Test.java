@@ -20,7 +20,9 @@ class Person3Test extends Person3 {
 
 		Set<String> keys = p.keySet();
 
-		Assertions.assertEquals("木村", p.get("A13"));
+		Assertions.assertEquals("木村", p.get("A13").getName());
+		Assertions.assertEquals("山田", p.get("A12").getName());
+		Assertions.assertEquals("田中", p.get("A14").getName());
 	}
 
 }
