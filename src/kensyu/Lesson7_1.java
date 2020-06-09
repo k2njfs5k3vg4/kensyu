@@ -12,7 +12,8 @@ class Lesson7_1 {
 	@Test
 	void test() {
 		IntStream ary = IntStream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-		Assertions.assertEquals(55, ary.sum());
+		IntStream ary2 = IntStream.range(1, 11);
+		Assertions.assertEquals(55, ary2.sum());
 	}
 
 	@Test
@@ -28,6 +29,7 @@ class Lesson7_1 {
 		list.add(51);
 
 		System.out.println(list.stream().mapToDouble(i -> i).sum());
+		//		System.out.println(ary.sorted());
 		//		ary.forEach(i -> {
 		//			System.out.println(i);
 		//		});
@@ -42,6 +44,18 @@ class Lesson7_1 {
 		//		});
 		//		ary.max();
 		Assertions.assertEquals(92, ary.max().getAsInt());
+	}
+
+	@Test
+	void test3() {
+		IntStream ary = IntStream.of(34, 83, 56, 74, 69, 92, 51);
+		//		ary.forEach(i -> {
+		//			System.out.println(i);
+		//		});
+		//		ary.max();
+		//		System.out.println(ary.sorted());
+		ary.sorted().forEach(System.out::println);
+		//		System.out.println(ary);
 	}
 
 }
