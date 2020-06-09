@@ -21,4 +21,14 @@ class Lesson7_1 {
 		});
 	}
 
+	@Test
+	void test2() {
+		IntStream ary = IntStream.of(34, 83, 56, 74, 69, 92, 51);
+		//		ary.forEach(i -> {
+		//			System.out.println(i);
+		//		});
+		//		ary.max();
+		Assertions.assertEquals(92, ary.max().getAsInt());
+	}
+
 }
