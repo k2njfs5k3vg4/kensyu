@@ -1,5 +1,7 @@
 package kensyu;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.IntStream;
 
 import org.junit.jupiter.api.Assertions;
@@ -16,9 +18,20 @@ class Lesson7_1 {
 	@Test
 	void test1() {
 		IntStream ary = IntStream.of(7, 12, 37, 24, 2, 92, 51);
-		ary.forEach(i -> {
-			System.out.println(i);
-		});
+		List<Integer> list = new ArrayList<Integer>();
+		list.add(7);
+		list.add(12);
+		list.add(37);
+		list.add(24);
+		list.add(2);
+		list.add(92);
+		list.add(51);
+
+		System.out.println(list.stream().mapToDouble(i -> i).sum());
+		//		ary.forEach(i -> {
+		//			System.out.println(i);
+		//		});
+		ary.forEach(System.out::println);
 	}
 
 	@Test
