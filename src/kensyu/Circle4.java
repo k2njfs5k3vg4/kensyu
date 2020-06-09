@@ -9,7 +9,11 @@ class Circle4 {
 
 	}
 
-	public Circle4(double radius) {
+	public Circle4(double radius) throws InvalidRadius {
+
+		if (radius <= 0) {
+			throw new InvalidRadius("半径を0以上に");
+		}
 		this.radius = radius;
 	}
 
