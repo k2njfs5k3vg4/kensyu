@@ -11,6 +11,7 @@ public class Lesson10_3 {
 
 	private final String url = "jdbc:postgresql:sample";
 	private String user;
+	private String pass;
 
 	public String getUser() {
 		return user;
@@ -28,8 +29,6 @@ public class Lesson10_3 {
 		this.pass = pass;
 	}
 
-	private String pass;
-
 	public Lesson10_3(String user, String pass) {
 		this.user = user;
 		this.pass = pass;
@@ -43,14 +42,24 @@ public class Lesson10_3 {
 			st.setString(1, word);
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
-				find.add(rs.getInt("code") + "：" + rs.getString("name") +
-						"：" + rs.getInt("age") + "：" + rs.getString("tel"));
+				find.add(toStringRow(rs));
 			}
 		} catch (SQLException e) {
 			throw new SQLException();
 		}
 
 		return find;
+	}
+
+	private String toStringRow(ResultSet rs) throws SQLException {
+		String rowData = "";
+		try {
+			rowData = rs.getInt("code") + "：" + rs.getString("name") +
+					"：" + rs.getInt("age") + "：" + rs.getString("tel");
+		} catch (SQLException e) {
+			throw new SQLException();
+		}
+		return rowData;
 	}
 
 }
