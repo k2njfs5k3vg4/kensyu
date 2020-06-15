@@ -9,12 +9,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class Lesson10_2Test {
+class SelectLikeTest extends SelectLike {
 
 	@Test
 	void test() {
-		Lesson10_2 a = new Lesson10_2();
-		Assertions.assertEquals("9 : 木間 : 24 : 080-1111-2222", a.insertSql(9, "木間", 24, "080-1111-2222"));
+		SelectLike a = new SelectLike();
+
+		Assertions.assertEquals("1 : 木間 : 24 : 080-1111-1111", a.like("木"));
 	}
 
 	@BeforeEach
@@ -24,16 +25,18 @@ class Lesson10_2Test {
 		String pass = "himitu";
 
 		String sql = "DELETE FROM emp";
+		String sql2 = "INSERT INTO emp VALUES(1,'木間',24,'080-1111-1111')";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
-				PreparedStatement st = con.prepareStatement(sql);) {
+				PreparedStatement st = con.prepareStatement(sql);
+				PreparedStatement st2 = con.prepareStatement(sql2);) {
 
 			st.executeUpdate();
+			st2.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
 	}
-
 }
