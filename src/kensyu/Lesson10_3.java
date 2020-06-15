@@ -39,7 +39,7 @@ public class Lesson10_3 {
 		String sql = "SELECT * FROM emp WHERE name LIKE ?";
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
-			st.setString(1, word);
+			st.setString(1, "%" + word + "%");
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
 				find.add(toStringRow(rs));

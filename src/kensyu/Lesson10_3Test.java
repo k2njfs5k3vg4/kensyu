@@ -67,7 +67,7 @@ class Lesson10_3Test {
 		try {
 			Lesson10_3 db = new Lesson10_3("student", "himitu");
 			String[] ans = { "1：鈴木：30：03-1111-1111", "5：木村：31：076-5555-5555" };
-			ArrayList<String> result = db.fuzzySerch("%木%");
+			ArrayList<String> result = db.fuzzySerch("木");
 			Assertions.assertEquals(2, result.size());
 			for (int i = 0; i < result.size(); i++) {
 				Assertions.assertEquals(ans[i], result.get(i));
