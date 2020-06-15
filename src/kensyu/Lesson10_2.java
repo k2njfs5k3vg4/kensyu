@@ -3,6 +3,7 @@ package kensyu;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Lesson10_2 {
@@ -71,6 +72,22 @@ public class Lesson10_2 {
 			e.printStackTrace();
 		}
 		return rows + "件挿入しました。";
+	}
+
+	public String getLastRow() {
+		String sql = "SELECT * FROM emp";
+		String lastRow = "";
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);
+				ResultSet rs = st.executeQuery();) {
+			while (rs.next()) {
+				lastRow = rs.getInt("code") + "：" + rs.getString("name") +
+						"：" + rs.getInt("age") + "：" + rs.getString("tel");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return lastRow;
 	}
 
 }
