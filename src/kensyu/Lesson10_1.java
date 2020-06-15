@@ -82,6 +82,7 @@ public class Lesson10_1 {
 				System.out.print(rs.getInt("age") + "：");
 				System.out.println(rs.getString("tel"));
 			}
+			rs.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
